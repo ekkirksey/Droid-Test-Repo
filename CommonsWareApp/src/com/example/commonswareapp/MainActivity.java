@@ -9,11 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class MainActivity extends Activity implements OnClickListener {
 
 	private Button btn;
+	private TextView tv;
+	private int counter = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	public void onClick(View v) {
 		updateTime();	
+		counter++;
+		tv.setText("The button has been clicked " + counter + " times.");
 	}
 
 	private void updateTime() {
